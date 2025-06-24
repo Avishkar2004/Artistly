@@ -45,7 +45,7 @@ const schema = yup
     experience: yup.string().required("Experience is required"),
     email: yup.string().email("Invalid email").required("Email is required"),
     phone: yup.string().required("Phone number is required"),
-    imageUrl: yup.string().url("Must be a valid URL").optional(),
+    imageUrl: yup.string().url("Must be a valid URL").required().default(""),
   })
   .required();
 
@@ -67,6 +67,7 @@ export default function OnboardPage() {
     defaultValues: {
       category: [],
       languages: [],
+      imageUrl: "",
     },
   });
 
